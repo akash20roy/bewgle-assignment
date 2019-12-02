@@ -5,15 +5,15 @@
   Screenshots of the Project:
   
   1. Customer Side:
-  ![Screenshot](screenshots/s1.png)
+  ![Screenshot](bewgle-ecommerce-master-master/screenshots/s1.png)
 
   2. Login Page:
-  ![Screenshot](screenshots/s2.png)
+  ![Screenshot](bewgle-ecommerce-master-master/screenshots/s2.png)
   
   3. Admin Side:
-  ![Screenshot](screenshots/s3.png)
+  ![Screenshot](bewgle-ecommerce-master-master/screenshots/s3.png)
   
-  ![Screenshot](screenshots/s4.png)
+  ![Screenshot](bewgle-ecommerce-master-master/screenshots/s4.png)
 
 
 
