@@ -1,0 +1,113 @@
+<app-navbar>
+    <div class="input-group">
+        <input type="text" class="search" placeholder="Search.." />
+        <span class="input-group-btn login">
+          <button (click)="toLogin()" type="button" class="login btn btn-warning">
+            Login
+          </button>
+        </span>
+      </div>
+</app-navbar>
+
+<a href="#" data-toggle="tooltip" data-placement="top" title="Add to cart">
+    <button class="btn btn-success btn-circle btn-circle-xl m-1"><i class="fa fa-2x fa-shopping-cart"></i></button>
+  </a>
+
+<div class="container">
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="list-group sidebar">
+          <a routerLink="/index" class="list-group-item">
+            Bluetooth Speakers
+          </a>
+
+          <a routerLink="/headphones" class="list-group-item active"
+            >{{itemData.category}}</a
+          >
+        </div>
+      </div>
+
+      <div class="col-lg-9">
+      <div class="card">
+        <img
+          class="card-img-top item-image"
+          src="{{ itemData.imageUrl }}"
+          alt=""
+        />
+        <div class="card-body">
+          <h3 class="card-title">{{ itemData.title }}</h3>
+          <h4>{{ itemData.price }}</h4>
+          <p class="card-text">
+            Available at:
+            <a href="{{ itemData.domain }}">{{
+              itemData.domain | uppercase
+            }}</a>
+          </p>
+          <span class="text-warning"
+            >&#9733; &#9733; &#9733; &#9733; &#9734;</span
+          >
+          4.0 stars
+        </div>
+      </div>
+    </div>
+
+      <div class="card card-outline-secondary item-spec">
+        <div class="card-header">
+          <h4>Product Details</h4>
+        </div>
+
+        <div class="Description">
+          <h6 class="desc-title">Description :</h6>
+          <li>Product Id: {{ itemData.productId }}</li>
+          <li>Created on: {{itemData.createdAt | slice:0:10}}</li>
+          <li>Category: {{ itemData.category}}</li>
+        </div>
+        <hr>
+        <div class="card-body">
+            <span class="name">Scoreboard :</span>
+          <div class="row my-4">
+            <div
+              class="col"
+              *ngFor="let data of itemData.topScores; let index = index"
+            >
+              <div
+                class="{{ index == 0 ? 'progress blue' : 'progress yellow' }}"
+              >
+                <span class="progress-left">
+                  <span class="progress-bar"></span>
+                </span>
+                <span class="progress-right">
+                  <span class="progress-bar"></span>
+                </span>
+                <div class="progress-value">{{ data.score }}</div>
+              </div>
+              <p class="topic-name">{{ data.topic }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="card card-outline-secondary item-review">
+    <div class="card-header">
+      <h4>Product Reviews</h4>
+    </div>
+    <!-- /.card -->
+
+    <div class="card-body">
+      <span class="review-count">Total reviews: {{ itemData.reviewCount }}</span>
+      <span class="review-date">Last review on: {{ itemData.latestReviewDate | slice: 0:10 }}</span>
+      <hr />
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim
+        aperiam inventore, similique necessitatibus neque non! Doloribus, modi
+        sapiente laboriosam aperiam fugiat laborum. Sequi mollitia,
+        necessitatibus quae sint natus.
+      </p>
+      <small class="text-muted">Posted by Anonymous on 3/1/17</small>
+      <hr />
+      <a href="#" class="btn btn-success">Leave a Review</a>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
+</div>
